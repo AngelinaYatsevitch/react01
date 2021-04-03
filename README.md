@@ -11,3 +11,7 @@ new post
 7. git push -u origin develop
 
 npx create-react-app app
+
+cd app
+npm start
+
