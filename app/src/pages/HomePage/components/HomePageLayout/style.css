@@ -1,6 +1,8 @@
-.btn{
-    border: blue solid 1px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+.home-btn{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+h1 {
+    text-align: center;
 }
