@@ -1,10 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import HomePageContainer from "./pages/HomePage/containers/HomePageContainer";
+import { BrowserRouter } from "react-router-dom";
+
+import Routes from "./routes/Routes";
 
 ReactDOM.render(
   <React.StrictMode>
-    <HomePageContainer />
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
