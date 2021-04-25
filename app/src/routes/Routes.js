@@ -4,6 +4,8 @@ import { ROUTES } from "./routesName";
 
 import HomePageContainer from "../pages/HomePage/containers/HomePageContainer";
 import CounterPageContainer from "../pages/CounterPage/containers/CounterPageContainer";
+import FunctionalCounterPageContainer from "../pages/FunctionalCounterPage/containers/FunctionalCounterPageContainer";
+import CountersPageContainer from "../pages/CountersPage/containers/CountersPageContainer";
 
 const Routes = () => {
   return (
@@ -14,6 +16,12 @@ const Routes = () => {
         path={ROUTES.COUNTER_PAGE}
         component={CounterPageContainer}
       />
+      <Route
+        exact
+        path={ROUTES.FUNCTIONAL_COUNTER_PAGE}
+        component={FunctionalCounterPageContainer}
+      />
+      <Route exact path={ROUTES.COUNTERS_PAGE} component={CountersPageContainer} />
     </Switch>
   );
 };

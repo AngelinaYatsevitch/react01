@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Counter from "../components/Counter";
+import Counter from "../../../comonComponents/Counter";
 
 class CounterPageContainer extends Component {
   constructor(props) {
@@ -11,51 +11,44 @@ class CounterPageContainer extends Component {
     };
   }
 
-  componentDidUpdate() {
-     (this.state.parityType === "Введено нечетное число") ? alert("нечетное") : alert("четное"); // пока так, незнаю как добавить цвет
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.countValue !== this.state.countValue) {
+      this.setState( (state)  =>  {
+        const parityType = state.countValue %2 === 0 ? "even" : "odd";
+    
+        return {
+          ...state,
+          parityType,
+        }
+      });
     }
-
-  parityType = (value) => {
-    if (value % 2) {
-      return "Введено нечетное число";
-    } else {
-      return "Введено четное число";
-    }
-  };
+  }
 
   handleIncrement = () => {
     this.setState((state) => {
       const countValue = state.countValue + 1;
-      const parityTypeEven = this.parityType(countValue);
       return {
+        ...state,
         countValue,
-        parityType: parityTypeEven,
       };
     });
   };
 
   handleDecrement = () => {
+    if (this.state.countValue > 0) {
     this.setState((state) => {
-      if (this.state.countValue <= 0) {
-        this.setState({ countValue: (this.state.countValue = 0) });
-      } else {
-        const countValue = state.countValue - 1;
-        const parityTypeEven = this.parityType(countValue);
-        return {
-          countValue,
-          parityType: parityTypeEven,
-        };
-      }
+      const countValue = state.countValue - 1;
+      return {
+        ...state,
+        countValue,
+      };
     });
   };
+}
 
   handleReset = () => {
-    this.setState((state) => {
-      const countValue = (state.countValue = 0);
-      return {
-        countValue,
-        parityType: "Введено четное число",
-      };
+    this.setState({
+      countValue: 0,
     });
   };
 

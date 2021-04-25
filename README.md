@@ -16,3 +16,7 @@ cd app
 
 npm start
 
+npm i prop-types --save-dev
+npm i react-router-dom
+npm i uuid
+npm i lodash
