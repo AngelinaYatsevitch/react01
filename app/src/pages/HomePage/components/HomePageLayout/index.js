@@ -16,6 +16,12 @@ const HomePageLayout = () => {
       <Link to ={ROUTES.COUNTERS_PAGE}>
         <button className="btn">GO TO HOOK COUNTER Page</button>
       </Link>
+      <Link to ={ROUTES.MANAGER_COUNTERS_PAGE}>
+        <button className="btn">GO TO MANAGER COUNTER Page</button>
+      </Link>
+      <Link to ={ROUTES.TODO_LIST}>
+        <button className="btn">Todo List</button>
+      </Link>
 
 
 

@@ -36,7 +36,7 @@ const Counter = ({
         </div>
         <div className="add-dell">
           {/* <button>addCounter</button> */}
-          <button>dellCounter</button>
+          <button onClick={handleAdd}>dellCounter</button>
         </div>
       </div>
     </>
@@ -49,6 +49,7 @@ Counter.propTypes = {
   handleIncrement: PropTypes.func.isRequired,
   handleDecrement: PropTypes.func.isRequired,
   handleReset: PropTypes.func.isRequired,
+  handleAdd: PropTypes.func.isRequired,
 };
 
 export default React.memo(Counter);
